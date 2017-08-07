@@ -27,3 +27,10 @@ body {
 body {
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+main.container{
+width: 450px;
+margin: 140px auto 0;
+background-color: white;
+padding-top:80px;
+}
