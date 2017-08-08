@@ -1,5 +1,25 @@
+h2 {
+    border-bottom: 1px solid #244751 ;
+    padding-bottom: 1px;
+    text-align: left;
+}
+
 section.new-tweet {
-
     border-radius: 25px;
+    padding: 1em;
+    background: #eee;
+    margin: 2em 2em ;
+}
 
+#textBox {
+    padding: 10px 10px;
+    width: 100%;
+}
+
+span.counter {
+  float: right;
+}
+
+.counter.error {
+  color: red;
 }
