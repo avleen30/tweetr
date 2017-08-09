@@ -38,7 +38,7 @@ header.user-tweet-header {
     border-top-right-radius: 25px;
 }
 
-img.user-image {
+img.user-thumbnail {
     width: 60px;
     height: 60px;
     float: left;
@@ -62,7 +62,7 @@ p.user-handle {
 }
 
 
-p.user-feed {
+main.tweet-content {
     padding: 2em;
     margin: 0;
 }
@@ -72,8 +72,3 @@ footer.user-tweet-footer {
     padding: 10px 10px 0 15px;
 }
 
-p.invisible {
-  color: #FFF;
-  float: right;
-  margin-top: -0.25em;
-}
