@@ -1,25 +1,79 @@
-h2 {
-    border-bottom: 1px solid #244751 ;
+main.container {
     padding-bottom: 1px;
     text-align: left;
 }
 
 section.new-tweet {
+    border: 1px solid #eee;
     border-radius: 25px;
     padding: 1em;
     background: #eee;
     margin: 2em 2em ;
 }
 
-#textBox {
+textarea#textBox {
     padding: 10px 10px;
     width: 100%;
 }
 
 span.counter {
-  float: right;
+    float: right;
 }
 
 .counter.error {
-  color: red;
+    color: red;
+}
+
+section.tweets-container {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 0;
+    margin: 2em 2em ;
+}
+
+header.user-tweet-header {
+    background-color: #eee;
+    padding: 1em;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+img.user-image {
+    width: 60px;
+    height: 60px;
+    float: left;
+    display: inline-block;
+    border: 0.5px solid #d7d7d7 ;
+    border-width: 0.5px;
+    border-radius: 5px;
+
+}
+
+h2.user-name {
+    float: left;
+    padding: 0em 1em;
+    display: inline-block;
+    position:absolute;
+}
+
+p.user-handle {
+    text-align: right;
+    padding: 0em 1em;
+}
+
+
+p.user-feed {
+    padding: 2em;
+    margin: 0;
+}
+
+footer.user-tweet-footer {
+    border-top: 1px solid black;
+    padding: 10px 10px 0 15px;
+}
+
+p.invisible {
+  color: #FFF;
+  float: right;
+  margin-top: -0.25em;
 }

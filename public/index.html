@@ -28,7 +28,6 @@
     <!-- composer-char-counter JQuery -->
     <script src="/scripts/composer-char-counter.js"></script>
 
-
   </head>
 
   <body>
@@ -41,17 +40,37 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-
-       <section class="new-tweet">
+      <section class="new-tweet">
         <h2>Compose Tweet</h2>
-            <form action="/tweets/" method="POST">
-            <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
-            <input type="submit" value="Tweet">
-            <span class="counter">140</span>
-          </form>
+        <form action="/tweets/" method="POST">
+          <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
       </section>
 
+      <!-- add anew box -->
+      <!--  Tweet container section-->
+      <section class="tweets-container">
+        <article >
+          <header class="user-tweet-header">
+            <img class="user-image" src="/images/bird.png">
+            <h2 class="user-name">Bill Fields</h2>
+            <p class="user-handle">@MrFields</p>
+          </header>
+          <p class="user-feed">Little tweet here</p>
+          <footer class="user-tweet-footer">
+          Date
+            <p class=“invisible”>
+              <i class=“fa fa-heart” aria-hidden=“true”></i>
+              <i class=“fa fa-flag” aria-hidden=“true”></i>
+              <i class=“fa fa-retweet” aria-hidden=“true”></i>
+            </p>
+          </footer>
+        </article>
+      </section>
     </main>
+
 
   </body>
 </html>
