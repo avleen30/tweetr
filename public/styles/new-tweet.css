@@ -24,7 +24,7 @@ span.counter {
     color: red;
 }
 
-section.tweets-container {
+.user-article  {
     border: 1px solid black;
     border-radius: 25px;
     padding: 0;
@@ -61,8 +61,12 @@ p.user-handle {
     padding: 0em 1em;
 }
 
+main.user-feed {
+    padding: 1em;
+    margin: 0;
+}
 
-main.tweet-content {
+p.tweet-body {
     padding: 2em;
     margin: 0;
 }
