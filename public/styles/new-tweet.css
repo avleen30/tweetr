@@ -71,8 +71,8 @@ img.user-thumbnail {
 
 h2.user-name {
     font-size: 150%;
-  display: inline-block;
-  padding-left: 10px;
+    display: inline-block;
+    padding-left: 10px;
 }
 
 p.user-handle {

@@ -8,19 +8,19 @@
     top: 0;
     width: 100%;
     z-index: 1;
-  }
+}
 
 #nav-bar .header {
     float: left;
     font-size: 40px;
     position: absolute;
     line-height: 2;
-  }
+}
 #nav-bar .logo {
     float: left;
     height: 80px;
     width: 80px;
-  }
+}
 
 #nav-bar .compose-button {
     border: 1px solid #111;
