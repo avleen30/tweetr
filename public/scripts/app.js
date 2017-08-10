@@ -3,70 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-var tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": {
-      "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-      "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-      "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-    },
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
-
-
-var data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
-
 function createTweetElement(dataObj) {
   var $tweet = $("<article>").addClass("user-article");
  // create header and its children
@@ -103,19 +39,54 @@ function createTweetElement(dataObj) {
     })
   }
 
+//fetching tweets from the http://localhost:8080/tweets page.
+function loadTweets() {
+  $.getJSON('/tweets')
+    .done((tweets) => {
+      renderTweets(tweets);
+    })
+}
+
+//form validation
+function isValid() {
+  var charLength = $(".new-tweet textarea").val().length;
+  if (!charLength) {
+    alert("Don't be shy. Well, I can't be empty! ")
+    return false;
+  }
+  if (charLength > 140) {
+    alert("I max out at 140 characters. You gotta make your tweet shorter");
+    return false;
+  }
+  return true;
+}
+
+function postTweet(event) {
+  event.preventDefault();
+  if (isValid()) {
+    const $form = $(this);
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $form.serialize()
+    })
+      .done(() => {
+        loadTweets();
+        $('.new-tweet textarea').val('');
+      })
+  }
+}
+
+function toggleComposeBox() {
+    $('.new-tweet').slideToggle("slow", () => {
+      $('.new-tweet textarea').focus();
+    });
+  }
 
 $( document ).ready(function(){
-
-//  // Test / driver code (temporary). Eventually will get this from the server.
-
-//   var $tweet = createTweetElement(tweetData);
-
-// // Test / driver code (temporary)
-//   console.log($tweet); // to see what it looks like
-//   $("#tweets-container").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-
-
-  renderTweets(data);
-
+  // Event handlers
+  $('#submit-tweet-form').on('submit', postTweet);
+  $('.compose-button').on('click', toggleComposeBox);
+// Do first load
+  loadTweets();
 });
