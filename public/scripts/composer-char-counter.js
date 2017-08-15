@@ -1,7 +1,8 @@
 // load js after page loads
 $(document).ready(function() {
+  const CHAR_LIMIT = 140
   $('textarea').on('keyup',function(){
-    var newcounter = 140 - $(this).val().length;
+    var newcounter = CHAR_LIMIT - $(this).val().length;
     $(".counter").html(newcounter);
 
     //to change color of character length displayed

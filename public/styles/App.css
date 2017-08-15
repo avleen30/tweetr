@@ -1,3 +1,89 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+ html {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;}
+
+/*
+ * Global layout stuff
+ */
+
+ body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+ main.container{
+  background-color: #ffffff;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  position: relative;
+  top: 50px;
+  width: 450px;
+}
+
+/* nav */
+
+#nav-bar {
+    background-color: #00a087;
+    color: #e8fdff;
+    height: 80px;
+    padding-left: 2em;
+    padding-right: 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#nav-bar .header {
+    float: left;
+    font-size: 40px;
+    position: absolute;
+    line-height: 2;
+}
+#nav-bar .logo {
+    float: left;
+    height: 80px;
+    width: 80px;
+}
+
+#nav-bar .compose-button {
+    border: 1px solid #111;
+    border-radius: 5px;
+    color: #208a75;
+    display: inline-block;
+    float: right;
+    height: 40px;
+    margin-top: 20px;
+    opacity: 0.85;
+    width: 80px;
+}
+
+#nav-bar .compose-button:hover {
+    background-color: #eee;
+    color: #000000;
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* new tweets */
+
 main.container {
     padding-bottom: 1px;
     text-align: left;
@@ -107,4 +193,5 @@ footer.user-tweet-footer {
 .fa {
   display: none;
 }
+
 

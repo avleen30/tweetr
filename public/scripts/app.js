@@ -4,8 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
  $( document ).ready(function(){
- function createTweetElement(dataObj) {
-  var $tweet = $("<article>").addClass("user-article");
+   function createTweetElement(dataObj) {
+    var $tweet = $("<article>").addClass("user-article");
  // create header and its children
  var header = $("<header>").addClass("user-tweet-header");
  header.append($("<img>").addClass("user-thumbnail").attr("src", dataObj.user.avatars.small));
@@ -64,7 +64,6 @@ function isValid() {
 
 function postTweet(event) {
   event.preventDefault();
-  debugger
   if (isValid()) {
     const $form = $(this);
     $.ajax({
